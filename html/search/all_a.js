@@ -1,7 +1,0 @@
-var searchData=
-[
-  ['oninitializedasync_0',['OnInitializedAsync',['../class_front_end_1_1_pages_1_1_contact_add_view.html#aeb43e83e416528605f54f575b54c61f6',1,'FrontEnd.Pages.ContactAddView.OnInitializedAsync()'],['../class_front_end_1_1_pages_1_1_contact_edit_view.html#a83a551367789c242735cb9461769028b',1,'FrontEnd.Pages.ContactEditView.OnInitializedAsync()'],['../class_front_end_1_1_pages_1_1_contact_list.html#ac86209638d4a7f30bb9e41eceed6c81f',1,'FrontEnd.Pages.ContactList.OnInitializedAsync()'],['../class_front_end_1_1_pages_1_1_login.html#a55fff3cb6ee5852cedc5c96dbf62e645',1,'FrontEnd.Pages.Login.OnInitializedAsync()']]],
-  ['onmodelcreating_1',['OnModelCreating',['../class_c_r_u_d_service_1_1_data_1_1_app_db_context.html#ae8e0954d44b8aa5d9223692934cd10b2',1,'CRUDService::Data::AppDbContext']]],
-  ['onparameterssetasync_2',['OnParametersSetAsync',['../class_front_end_1_1_pages_1_1_contact_add_view.html#a51e464791308973f8f9e35da095617f8',1,'FrontEnd.Pages.ContactAddView.OnParametersSetAsync()'],['../class_front_end_1_1_pages_1_1_contact_details.html#ab9d33de392701128cda80e913156b96c',1,'FrontEnd.Pages.ContactDetails.OnParametersSetAsync()'],['../class_front_end_1_1_pages_1_1_contact_edit_view.html#aee0327e0c5bab43a07c3c12fd97c660b',1,'FrontEnd.Pages.ContactEditView.OnParametersSetAsync()']]],
-  ['overview_3',['Overview',['../md__r_e_a_d_m_e.html#autotoc_md1',1,'']]]
-];

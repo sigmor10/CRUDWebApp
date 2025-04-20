@@ -7,6 +7,8 @@ The **CRUDWebApp** is composed of 2 projects:
 - `CRUDService`: based on ASP.NET Core which serves as backend application
 - `FrontEnd`: based on Blazor WebAssembly (WASM) which serves as SPA frontend application.
 
+To view full documentation open ./html/index.html fiel in a browser.
+
 ## Caution
 
 For the whole app to work properly as is, you need **Postgres Server** running on **localhost** on port **5432**.
