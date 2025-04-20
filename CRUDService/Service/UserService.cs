@@ -9,6 +9,9 @@ using System.Text;
 
 namespace CRUDService.Service
 {
+    /// <summary>
+    /// Class that implements IUserService interface
+    /// </summary>
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepo;

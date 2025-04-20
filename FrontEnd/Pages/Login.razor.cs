@@ -40,7 +40,7 @@ namespace FrontEnd.Pages
             }
             else
             {
-                Console.WriteLine("Failed to add contact");
+                Console.WriteLine("Failed to log in");
             }
         }
     }

@@ -53,7 +53,7 @@ builder.Services.AddAuthorization();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowBlazor", policy =>
-        policy.WithOrigins("https://localhost:8085") // <— Blazor's port
+        policy.WithOrigins("https://localhost:8085") // <— SPAs port
               .AllowAnyHeader()
               .AllowAnyMethod()
     );

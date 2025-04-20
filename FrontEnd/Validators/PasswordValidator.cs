@@ -30,9 +30,16 @@ namespace FrontEnd.Validators
                    password.Any(c => !char.IsLetterOrDigit(c));
         }
 
+
+        /// <summary>
+        /// Returns error message when validation failed
+        /// </summary>
+        /// <param name="name">Unused parameter from overriden method</param>
+        /// <returns>Error message</returns>
         public override string FormatErrorMessage(string name)
         {
-            return "Hasło musi zawierać co najmniej 8 znaków, w tym jedną wielką literę, jedną małą literę, jedną cyfrę i jeden znak specjalny.";
+            return "Hasło musi zawierać co najmniej 8 znaków, w tym jedną wielką literę," +
+                " jedną małą literę, jedną cyfrę i jeden znak specjalny.";
         }
     }
 }

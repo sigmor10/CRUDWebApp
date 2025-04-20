@@ -20,6 +20,8 @@ namespace FrontEnd.Pages
         private bool emailExists = false;
 
         private bool IsCustomSubCategory = false;
+
+        // Idiomatic expressions for automatic changes in subcategory input/selection
         private string _selectedSubCategory;
         private string selectedSubCategory
         {
@@ -168,7 +170,7 @@ namespace FrontEnd.Pages
             }
             else
             {
-                Console.WriteLine("Failed to save contact");
+                Console.WriteLine("Failed to add new contact");
             }
         }
 

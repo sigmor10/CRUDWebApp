@@ -8,9 +8,11 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
+// Adds authorization
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddAuthorizationCore();
 
+// Adds injectavble object of class AuthServiceW
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddScoped<AuthService>();
 

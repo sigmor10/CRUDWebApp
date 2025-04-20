@@ -11,6 +11,7 @@
 
     <main>
         <div class="top-row px-4">
+            <!-- Displays log in or logout buttons dpeending on apps state -->
             @if (AuthService.IsLoggedIn)
             {
                 <p>
@@ -30,18 +31,29 @@
 </div>
 
 @code {
+    //// <summary>
+    /// Initializes AuthService object and its event detection
+    /// </summary>
+    /// <returns></returns>
     protected override async Task OnInitializedAsync()
     {
         await AuthService.InitializeAsync();
         AuthService.OnChange += StateHasChanged;
     }
 
+    /// <summary>
+    /// Logs out user and redirects him to homepage
+    /// </summary>
+    /// <returns></returns>
     private async Task Logout()
     {
         await AuthService.Logout();
         Navigation.NavigateTo("/");
     }
 
+    /// <summary>
+    /// Redirects usres to login form
+    /// </summary>
     private void RedirectToLogin()
     {
         Navigation.NavigateTo("/login");

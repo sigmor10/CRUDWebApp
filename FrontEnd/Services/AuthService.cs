@@ -29,7 +29,7 @@ namespace FrontEnd.Services
         {
             var token = await _localStorage.GetItemAsync<string>("authToken");
 
-            // checks if token was properly fownloaded
+            // Checks if token was properly fownloaded
             if (!string.IsNullOrWhiteSpace(token))
             {
                 var handler = new JwtSecurityTokenHandler();
