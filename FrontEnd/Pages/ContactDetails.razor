@@ -53,48 +53,5 @@
 <button class="btn btn-secondary" @onclick="RedirectToList">Wróć dp listy</button>
 
 @code {
-    [Parameter]
-    public Guid id { get; set; }
-    private GetContactResponse? contact;
-
-    // Fetches paginated list from backend
-    private async Task LoadContactList()
-    {
-        contact = await Http
-            .GetFromJsonAsync<GetContactResponse>($"api/contacts/{id}");
-    }
-
-    // Initializes contact list
-    protected override async Task OnParametersSetAsync()
-    {
-        await LoadContactList();
-    }
-
-    // Sends delete request
-    private async Task DeleteContact(Guid id)
-    {
-        if (AuthService.IsLoggedIn)
-        {
-            if (contact == null) return;
-            var token = await LocalStorage.GetItemAsync<string>("authToken");
-            var request = new HttpRequestMessage(HttpMethod.Delete, $"api/contacts/{id}/delete");
-            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-            var response = await Http.SendAsync(request);
-            Navigation.NavigateTo("/");
-        }
-    }
-
-    // Redirects to Contact's edit view
-    private void RedirectToEdit(Guid id)
-    {
-        if (AuthService.IsLoggedIn)
-            Navigation.NavigateTo($"contacts/{id}/edit");
-    }
-
-    // Redirects to contact list view
-    private void RedirectToList()
-    {
-        Navigation.NavigateTo("contacts");
-    }
+    
 }

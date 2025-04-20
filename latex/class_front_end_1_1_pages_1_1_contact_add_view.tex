@@ -1,0 +1,150 @@
+\doxysection{Front\+End.\+Pages.\+Contact\+Add\+View Class Reference}
+\hypertarget{class_front_end_1_1_pages_1_1_contact_add_view}{}\label{class_front_end_1_1_pages_1_1_contact_add_view}\index{FrontEnd.Pages.ContactAddView@{FrontEnd.Pages.ContactAddView}}
+
+
+Code behind of \doxylink{class_front_end_1_1_pages_1_1_contact_add_view}{Contact\+Add\+View}.  
+
+
+Inheritance diagram for Front\+End.\+Pages.\+Contact\+Add\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_front_end_1_1_pages_1_1_contact_add_view}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override async Task \mbox{\hyperlink{class_front_end_1_1_pages_1_1_contact_add_view_aeb43e83e416528605f54f575b54c61f6}{On\+Initialized\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Redirects unauthorized users to the login page. \end{DoxyCompactList}\item 
+override async Task \mbox{\hyperlink{class_front_end_1_1_pages_1_1_contact_add_view_a51e464791308973f8f9e35da095617f8}{On\+Parameters\+Set\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Initializes contact list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_af0b59f5339823804c6fa95caf8dbf730}\label{class_front_end_1_1_pages_1_1_contact_add_view_af0b59f5339823804c6fa95caf8dbf730} 
+string {\bfseries selected\+Sub\+Category}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_afe9e66ad67f492d049b2918d5cfa6d40}\label{class_front_end_1_1_pages_1_1_contact_add_view_afe9e66ad67f492d049b2918d5cfa6d40} 
+int {\bfseries selected\+Category}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_a5791ce469a82366f82f4b04f36985aee}\label{class_front_end_1_1_pages_1_1_contact_add_view_a5791ce469a82366f82f4b04f36985aee} 
+void {\bfseries Set\+To\+Default\+Values} ()
+\begin{DoxyCompactList}\small\item\em Sets Entity and form to default values. \end{DoxyCompactList}\item 
+async Task \mbox{\hyperlink{class_front_end_1_1_pages_1_1_contact_add_view_a716294f654b8c1ef698d6cd5928da03d}{Load\+Content}} ()
+\begin{DoxyCompactList}\small\item\em Fetches paginated list from backend. \end{DoxyCompactList}\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_a750c6bbd8e6a809baa818759128f68e3}\label{class_front_end_1_1_pages_1_1_contact_add_view_a750c6bbd8e6a809baa818759128f68e3} 
+void {\bfseries Filter\+Sub\+Categories} ()
+\begin{DoxyCompactList}\small\item\em Filters Sub\+Categories to select only one viable for given category. \end{DoxyCompactList}\item 
+async Task$<$ bool $>$ \mbox{\hyperlink{class_front_end_1_1_pages_1_1_contact_add_view_a05a993f26cd4fa7e31edd69f3b1835cc}{Validate\+Emael}} ()
+\begin{DoxyCompactList}\small\item\em Checks if given email is already in use by other user. \end{DoxyCompactList}\item 
+async Task \mbox{\hyperlink{class_front_end_1_1_pages_1_1_contact_add_view_a0eca34c784c6f2ce217e3a8693284397}{Save\+Contact}} ()
+\begin{DoxyCompactList}\small\item\em Saves edited contact. \end{DoxyCompactList}\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_a4ac145d4eeb0a2bb4b0499cf163511dd}\label{class_front_end_1_1_pages_1_1_contact_add_view_a4ac145d4eeb0a2bb4b0499cf163511dd} 
+void {\bfseries Redirect\+To\+List} ()
+\begin{DoxyCompactList}\small\item\em Redirects to contact list view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_a9b384cc60afd782683716834ba9cc045}\label{class_front_end_1_1_pages_1_1_contact_add_view_a9b384cc60afd782683716834ba9cc045} 
+\mbox{\hyperlink{class_front_end_1_1_models_1_1_create_contact_request}{Create\+Contact\+Request}}? {\bfseries contact} = new()
+\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_aab9df5c662540d9bdbe36b876fa0fc19}\label{class_front_end_1_1_pages_1_1_contact_add_view_aab9df5c662540d9bdbe36b876fa0fc19} 
+List$<$ \mbox{\hyperlink{class_front_end_1_1_models_1_1_category}{Category}} $>$? {\bfseries categories}
+\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_a416c435ac3517966349b7ca012835587}\label{class_front_end_1_1_pages_1_1_contact_add_view_a416c435ac3517966349b7ca012835587} 
+List$<$ \mbox{\hyperlink{class_front_end_1_1_models_1_1_sub_category}{Sub\+Category}} $>$? {\bfseries sub\+Cats}
+\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_af56e26bf689bb6c3b419ded2ca4b0acf}\label{class_front_end_1_1_pages_1_1_contact_add_view_af56e26bf689bb6c3b419ded2ca4b0acf} 
+List$<$ \mbox{\hyperlink{class_front_end_1_1_models_1_1_sub_category}{Sub\+Category}} $>$ {\bfseries filtered\+Sub\+Cats} = new()
+\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_a4bc279825856d26f0d1bd1ae6a823bb3}\label{class_front_end_1_1_pages_1_1_contact_add_view_a4bc279825856d26f0d1bd1ae6a823bb3} 
+bool {\bfseries email\+Exists} = false
+\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_a2e83ef4574b1ff3b23a37cef4c7a8d7f}\label{class_front_end_1_1_pages_1_1_contact_add_view_a2e83ef4574b1ff3b23a37cef4c7a8d7f} 
+bool {\bfseries Is\+Custom\+Sub\+Category} = false
+\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_a6c6f25b82134b3bfc7358563657c6531}\label{class_front_end_1_1_pages_1_1_contact_add_view_a6c6f25b82134b3bfc7358563657c6531} 
+string {\bfseries \+\_\+selected\+Sub\+Category}
+\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_aeaabf950bf09e21c153db8b1b596340f}\label{class_front_end_1_1_pages_1_1_contact_add_view_aeaabf950bf09e21c153db8b1b596340f} 
+int {\bfseries \+\_\+selected\+Category}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Code behind of \doxylink{class_front_end_1_1_pages_1_1_contact_add_view}{Contact\+Add\+View}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_a716294f654b8c1ef698d6cd5928da03d}\index{FrontEnd.Pages.ContactAddView@{FrontEnd.Pages.ContactAddView}!LoadContent@{LoadContent}}
+\index{LoadContent@{LoadContent}!FrontEnd.Pages.ContactAddView@{FrontEnd.Pages.ContactAddView}}
+\doxysubsubsection{\texorpdfstring{LoadContent()}{LoadContent()}}
+{\footnotesize\ttfamily \label{class_front_end_1_1_pages_1_1_contact_add_view_a716294f654b8c1ef698d6cd5928da03d} 
+async Task Front\+End.\+Pages.\+Contact\+Add\+View.\+Load\+Content (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Fetches paginated list from backend. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_aeb43e83e416528605f54f575b54c61f6}\index{FrontEnd.Pages.ContactAddView@{FrontEnd.Pages.ContactAddView}!OnInitializedAsync@{OnInitializedAsync}}
+\index{OnInitializedAsync@{OnInitializedAsync}!FrontEnd.Pages.ContactAddView@{FrontEnd.Pages.ContactAddView}}
+\doxysubsubsection{\texorpdfstring{OnInitializedAsync()}{OnInitializedAsync()}}
+{\footnotesize\ttfamily \label{class_front_end_1_1_pages_1_1_contact_add_view_aeb43e83e416528605f54f575b54c61f6} 
+override async Task Front\+End.\+Pages.\+Contact\+Add\+View.\+On\+Initialized\+Async (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Redirects unauthorized users to the login page. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_a51e464791308973f8f9e35da095617f8}\index{FrontEnd.Pages.ContactAddView@{FrontEnd.Pages.ContactAddView}!OnParametersSetAsync@{OnParametersSetAsync}}
+\index{OnParametersSetAsync@{OnParametersSetAsync}!FrontEnd.Pages.ContactAddView@{FrontEnd.Pages.ContactAddView}}
+\doxysubsubsection{\texorpdfstring{OnParametersSetAsync()}{OnParametersSetAsync()}}
+{\footnotesize\ttfamily \label{class_front_end_1_1_pages_1_1_contact_add_view_a51e464791308973f8f9e35da095617f8} 
+override async Task Front\+End.\+Pages.\+Contact\+Add\+View.\+On\+Parameters\+Set\+Async (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Initializes contact list. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_a0eca34c784c6f2ce217e3a8693284397}\index{FrontEnd.Pages.ContactAddView@{FrontEnd.Pages.ContactAddView}!SaveContact@{SaveContact}}
+\index{SaveContact@{SaveContact}!FrontEnd.Pages.ContactAddView@{FrontEnd.Pages.ContactAddView}}
+\doxysubsubsection{\texorpdfstring{SaveContact()}{SaveContact()}}
+{\footnotesize\ttfamily \label{class_front_end_1_1_pages_1_1_contact_add_view_a0eca34c784c6f2ce217e3a8693284397} 
+async Task Front\+End.\+Pages.\+Contact\+Add\+View.\+Save\+Contact (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Saves edited contact. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_add_view_a05a993f26cd4fa7e31edd69f3b1835cc}\index{FrontEnd.Pages.ContactAddView@{FrontEnd.Pages.ContactAddView}!ValidateEmael@{ValidateEmael}}
+\index{ValidateEmael@{ValidateEmael}!FrontEnd.Pages.ContactAddView@{FrontEnd.Pages.ContactAddView}}
+\doxysubsubsection{\texorpdfstring{ValidateEmael()}{ValidateEmael()}}
+{\footnotesize\ttfamily \label{class_front_end_1_1_pages_1_1_contact_add_view_a05a993f26cd4fa7e31edd69f3b1835cc} 
+async Task$<$ bool $>$ Front\+End.\+Pages.\+Contact\+Add\+View.\+Validate\+Emael (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Checks if given email is already in use by other user. 
+
+\begin{DoxyReturn}{Returns}
+bool saying whether email is valid and not taken
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Front\+End/\+Pages/Contact\+Add\+View.\+razor.\+cs\end{DoxyCompactItemize}

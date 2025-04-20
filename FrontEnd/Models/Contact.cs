@@ -2,7 +2,10 @@
 
 namespace FrontEnd.Models
 {
-    //Base DTO holds every field that is used in every other contact DTO class
+    /// <summary>
+    /// Base DTO holds every field that is used in every other contact DTO class
+    /// Annotated for early valdiation and early rejection of invalid requests.
+    /// </summary>
     public class Contact
     {
         public Guid Id { get; set; }

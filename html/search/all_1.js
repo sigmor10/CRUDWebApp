@@ -1,0 +1,10 @@
+var searchData=
+[
+  ['addcontact_0',['AddContact',['../class_c_r_u_d_service_1_1_repository_1_1_contact_repository.html#a03f884de75cbed05c454fa9773a4c707',1,'CRUDService.Repository.ContactRepository.AddContact()'],['../interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository.html#af12187a7fb1857a231c0539ea26a8fa4',1,'CRUDService.Repository.IContactRepository.AddContact()'],['../class_c_r_u_d_service_1_1_service_1_1_contact_service.html#ab8f10bb82955a3341828e92eb94ae190',1,'CRUDService.Service.ContactService.AddContact()'],['../interface_c_r_u_d_service_1_1_service_1_1_i_contact_service.html#aadab8c585caa46adb3b1ba95c1be5d78',1,'CRUDService.Service.IContactService.AddContact()']]],
+  ['appdbcontext_1',['AppDbContext',['../class_c_r_u_d_service_1_1_data_1_1_app_db_context.html',1,'CRUDService::Data']]],
+  ['appdbcontextmodelsnapshot_2',['AppDbContextModelSnapshot',['../class_c_r_u_d_service_1_1_migrations_1_1_app_db_context_model_snapshot.html',1,'CRUDService::Migrations']]],
+  ['authcontroller_3',['AuthController',['../class_c_r_u_d_service_1_1_controllers_1_1_auth_controller.html',1,'CRUDService.Controllers.AuthController'],['../class_c_r_u_d_service_1_1_controllers_1_1_auth_controller.html#af717fc7391f09dc218c0eee7742d4d4a',1,'CRUDService.Controllers.AuthController.AuthController()']]],
+  ['authenticate_4',['Authenticate',['../interface_c_r_u_d_service_1_1_service_1_1_i_user_service.html#a8ae4073d95b62725aa71ffd6ac1ede21',1,'CRUDService.Service.IUserService.Authenticate()'],['../class_c_r_u_d_service_1_1_service_1_1_user_service.html#a7dda74722ae1911be56e86417bd6c10f',1,'CRUDService.Service.UserService.Authenticate()']]],
+  ['authorize_5',['Authorize',['../class_c_r_u_d_service_1_1_controllers_1_1_auth_controller.html#ae36d7bc393daa7512c754ea6236c615e',1,'CRUDService::Controllers::AuthController']]],
+  ['authservice_6',['AuthService',['../class_front_end_1_1_services_1_1_auth_service.html',1,'FrontEnd::Services']]]
+];

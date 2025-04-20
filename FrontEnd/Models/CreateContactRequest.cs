@@ -3,8 +3,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FrontEnd.Models
 {
-    // dTO class used for updates and creation requests,
-    // it posses every field informative field of contact
+    /// <summary>
+    /// dTO class used for updates and creation requests,
+    /// it posses every field informative field of contact
+    /// Annotated for early valdiation and early rejection of invalid requests.
+    /// </summary>
     public class CreateContactRequest : DetailedContact
     {
         [Required]

@@ -1,0 +1,307 @@
+\doxysection{CRUDService.\+Repository.\+IContact\+Repository Interface Reference}
+\hypertarget{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository}{}\label{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository}\index{CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}}
+
+
+Interface posseses collection of methods for handling data stored in the database.  
+
+
+Inheritance diagram for CRUDService.\+Repository.\+IContact\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ bool $>$ \mbox{\hyperlink{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_af6ea3620fea2a69e9c912a65f7c85a9f}{Check\+If\+Id\+Exists}} (Guid id)
+\begin{DoxyCompactList}\small\item\em Checks if contact with given id exists. \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_models_1_1_contact}{Contact}}?$>$ \mbox{\hyperlink{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_aea176d55b7b85052ee6550918428dda2}{Find\+Contact\+By\+Id}} (Guid id)
+\begin{DoxyCompactList}\small\item\em Retrieves contact by its id. \end{DoxyCompactList}\item 
+Task$<$ bool $>$ \mbox{\hyperlink{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_ab02e5a9ffd144de7114076273bf6dcc3}{Check\+If\+Email\+Taken}} (string email)
+\begin{DoxyCompactList}\small\item\em Retrieves contact by its Email. \end{DoxyCompactList}\item 
+Task$<$ List$<$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_models_1_1_contact}{Contact}} $>$ $>$ \mbox{\hyperlink{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_a194a249f0c747571a455d3c16edbf0a7}{Find\+All\+Contacts}} (int skip, int take)
+\begin{DoxyCompactList}\small\item\em Retrieves a paginated list of contacts. \end{DoxyCompactList}\item 
+Task$<$ List$<$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_models_1_1_category}{Category}} $>$ $>$ \mbox{\hyperlink{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_acbaec506c7ace90a1657ae4e06a9f410}{Find\+All\+Categories}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all categories. \end{DoxyCompactList}\item 
+Task$<$ string?$>$ \mbox{\hyperlink{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_a72712ccf137ac980740cf11c297c0ccc}{Find\+Category\+Name\+By\+Id}} (int id)
+\begin{DoxyCompactList}\small\item\em Retrieves a category name for given id. \end{DoxyCompactList}\item 
+Task$<$ string?$>$ \mbox{\hyperlink{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_ad1caf19f03c7d345f96c70338a2bd255}{Find\+User\+Email\+By\+Id}} (Guid id)
+\begin{DoxyCompactList}\small\item\em Retrieves user email by her/his id. \end{DoxyCompactList}\item 
+Task$<$ List$<$ string $>$ $>$ \mbox{\hyperlink{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_a557c379769c68387902dd66814114e3a}{Find\+All\+Sub\+Categories\+By\+Id}} (int id)
+\begin{DoxyCompactList}\small\item\em Fetches all subcategoires for given id. \end{DoxyCompactList}\item 
+Task$<$ List$<$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_models_1_1_sub_category}{Sub\+Category}} $>$ $>$ \mbox{\hyperlink{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_a89cfd8060ab4c3868e834b563593cb4a}{Find\+All\+Sub\+Categories}} ()
+\begin{DoxyCompactList}\small\item\em Fetches all subcategoires. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_af12187a7fb1857a231c0539ea26a8fa4}{Add\+Contact}} (\mbox{\hyperlink{class_c_r_u_d_service_1_1_models_1_1_contact}{Contact}} contact)
+\begin{DoxyCompactList}\small\item\em Adds new contact. \end{DoxyCompactList}\item 
+Task$<$ bool $>$ \mbox{\hyperlink{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_ac23099f8c8af7522edafd2f3c3bb01e4}{Update\+Contact}} (\mbox{\hyperlink{class_c_r_u_d_service_1_1_models_1_1_contact}{Contact}} contact)
+\begin{DoxyCompactList}\small\item\em Updates existing contact. \end{DoxyCompactList}\item 
+Task$<$ bool $>$ \mbox{\hyperlink{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_a45894530697ba7e7e390a220466e762f}{Delete\+Contact}} (Guid id)
+\begin{DoxyCompactList}\small\item\em Deletes existing contact. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface posseses collection of methods for handling data stored in the database. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_af12187a7fb1857a231c0539ea26a8fa4}\index{CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}!AddContact@{AddContact}}
+\index{AddContact@{AddContact}!CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}}
+\doxysubsubsection{\texorpdfstring{AddContact()}{AddContact()}}
+{\footnotesize\ttfamily \label{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_af12187a7fb1857a231c0539ea26a8fa4} 
+Task CRUDService.\+Repository.\+IContact\+Repository.\+Add\+Contact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_r_u_d_service_1_1_models_1_1_contact}{Contact}}}]{contact}{}\end{DoxyParamCaption})}
+
+
+
+Adds new contact. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact} & \doxylink{class_c_r_u_d_service_1_1_models_1_1_contact}{Contact} object\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_c_r_u_d_service_1_1_repository_1_1_contact_repository_a03f884de75cbed05c454fa9773a4c707}{CRUDService.\+Repository.\+Contact\+Repository}}.
+
+\Hypertarget{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_ab02e5a9ffd144de7114076273bf6dcc3}\index{CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}!CheckIfEmailTaken@{CheckIfEmailTaken}}
+\index{CheckIfEmailTaken@{CheckIfEmailTaken}!CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}}
+\doxysubsubsection{\texorpdfstring{CheckIfEmailTaken()}{CheckIfEmailTaken()}}
+{\footnotesize\ttfamily \label{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_ab02e5a9ffd144de7114076273bf6dcc3} 
+Task$<$ bool $>$ CRUDService.\+Repository.\+IContact\+Repository.\+Check\+If\+Email\+Taken (\begin{DoxyParamCaption}\item[{string}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves contact by its Email. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if given email exists or flase if not
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_c_r_u_d_service_1_1_repository_1_1_contact_repository_ac72d359e2f9ab3efb5ae520e1f6fb321}{CRUDService.\+Repository.\+Contact\+Repository}}.
+
+\Hypertarget{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_af6ea3620fea2a69e9c912a65f7c85a9f}\index{CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}!CheckIfIdExists@{CheckIfIdExists}}
+\index{CheckIfIdExists@{CheckIfIdExists}!CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}}
+\doxysubsubsection{\texorpdfstring{CheckIfIdExists()}{CheckIfIdExists()}}
+{\footnotesize\ttfamily \label{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_af6ea3620fea2a69e9c912a65f7c85a9f} 
+Task$<$ bool $>$ CRUDService.\+Repository.\+IContact\+Repository.\+Check\+If\+Id\+Exists (\begin{DoxyParamCaption}\item[{Guid}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Checks if contact with given id exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Contacts Guid\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if exists false if not
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_c_r_u_d_service_1_1_repository_1_1_contact_repository_ad87991fb4dded01dd12e7342f9a22014}{CRUDService.\+Repository.\+Contact\+Repository}}.
+
+\Hypertarget{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_a45894530697ba7e7e390a220466e762f}\index{CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}!DeleteContact@{DeleteContact}}
+\index{DeleteContact@{DeleteContact}!CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}}
+\doxysubsubsection{\texorpdfstring{DeleteContact()}{DeleteContact()}}
+{\footnotesize\ttfamily \label{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_a45894530697ba7e7e390a220466e762f} 
+Task$<$ bool $>$ CRUDService.\+Repository.\+IContact\+Repository.\+Delete\+Contact (\begin{DoxyParamCaption}\item[{Guid}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Deletes existing contact. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \doxylink{class_c_r_u_d_service_1_1_models_1_1_contact}{Contact}\textquotesingle{}s Guid\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if object was deleted successfully false if not
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_c_r_u_d_service_1_1_repository_1_1_contact_repository_a667937b303a0b57578c68221a6a318ef}{CRUDService.\+Repository.\+Contact\+Repository}}.
+
+\Hypertarget{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_acbaec506c7ace90a1657ae4e06a9f410}\index{CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}!FindAllCategories@{FindAllCategories}}
+\index{FindAllCategories@{FindAllCategories}!CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}}
+\doxysubsubsection{\texorpdfstring{FindAllCategories()}{FindAllCategories()}}
+{\footnotesize\ttfamily \label{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_acbaec506c7ace90a1657ae4e06a9f410} 
+Task$<$ List$<$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_models_1_1_category}{Category}} $>$ $>$ CRUDService.\+Repository.\+IContact\+Repository.\+Find\+All\+Categories (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves all categories. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_c_r_u_d_service_1_1_models_1_1_category}{Category} object
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_c_r_u_d_service_1_1_repository_1_1_contact_repository_af07bfbef2dca80828f2cd9070b398325}{CRUDService.\+Repository.\+Contact\+Repository}}.
+
+\Hypertarget{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_a194a249f0c747571a455d3c16edbf0a7}\index{CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}!FindAllContacts@{FindAllContacts}}
+\index{FindAllContacts@{FindAllContacts}!CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}}
+\doxysubsubsection{\texorpdfstring{FindAllContacts()}{FindAllContacts()}}
+{\footnotesize\ttfamily \label{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_a194a249f0c747571a455d3c16edbf0a7} 
+Task$<$ List$<$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_models_1_1_contact}{Contact}} $>$ $>$ CRUDService.\+Repository.\+IContact\+Repository.\+Find\+All\+Contacts (\begin{DoxyParamCaption}\item[{int}]{skip}{, }\item[{int}]{take}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a paginated list of contacts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em skip} & Defines how many records should be skipped\\
+\hline
+{\em take} & Defines max length of returned list\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Either \doxylink{class_c_r_u_d_service_1_1_models_1_1_contact}{Contact} object or null
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_c_r_u_d_service_1_1_repository_1_1_contact_repository_a7d1cd3e48c266f9c3dee117b78f5f710}{CRUDService.\+Repository.\+Contact\+Repository}}.
+
+\Hypertarget{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_a89cfd8060ab4c3868e834b563593cb4a}\index{CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}!FindAllSubCategories@{FindAllSubCategories}}
+\index{FindAllSubCategories@{FindAllSubCategories}!CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}}
+\doxysubsubsection{\texorpdfstring{FindAllSubCategories()}{FindAllSubCategories()}}
+{\footnotesize\ttfamily \label{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_a89cfd8060ab4c3868e834b563593cb4a} 
+Task$<$ List$<$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_models_1_1_sub_category}{Sub\+Category}} $>$ $>$ CRUDService.\+Repository.\+IContact\+Repository.\+Find\+All\+Sub\+Categories (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Fetches all subcategoires. 
+
+\begin{DoxyReturn}{Returns}
+List of all subcategories
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_c_r_u_d_service_1_1_repository_1_1_contact_repository_a46fa79579157747c81c3f23bd5dbe400}{CRUDService.\+Repository.\+Contact\+Repository}}.
+
+\Hypertarget{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_a557c379769c68387902dd66814114e3a}\index{CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}!FindAllSubCategoriesById@{FindAllSubCategoriesById}}
+\index{FindAllSubCategoriesById@{FindAllSubCategoriesById}!CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}}
+\doxysubsubsection{\texorpdfstring{FindAllSubCategoriesById()}{FindAllSubCategoriesById()}}
+{\footnotesize\ttfamily \label{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_a557c379769c68387902dd66814114e3a} 
+Task$<$ List$<$ string $>$ $>$ CRUDService.\+Repository.\+IContact\+Repository.\+Find\+All\+Sub\+Categories\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Fetches all subcategoires for given id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Id of a \doxylink{class_c_r_u_d_service_1_1_models_1_1_category}{Category}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of names of all the subcategory names belonging to the given \doxylink{class_c_r_u_d_service_1_1_models_1_1_category}{Category}
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_c_r_u_d_service_1_1_repository_1_1_contact_repository_a2fa5ce2a4dc6fe4da488235570f7f0ae}{CRUDService.\+Repository.\+Contact\+Repository}}.
+
+\Hypertarget{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_a72712ccf137ac980740cf11c297c0ccc}\index{CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}!FindCategoryNameById@{FindCategoryNameById}}
+\index{FindCategoryNameById@{FindCategoryNameById}!CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}}
+\doxysubsubsection{\texorpdfstring{FindCategoryNameById()}{FindCategoryNameById()}}
+{\footnotesize\ttfamily \label{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_a72712ccf137ac980740cf11c297c0ccc} 
+Task$<$ string?$>$ CRUDService.\+Repository.\+IContact\+Repository.\+Find\+Category\+Name\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a category name for given id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Id of a \doxylink{class_c_r_u_d_service_1_1_models_1_1_category}{Category}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_c_r_u_d_service_1_1_models_1_1_category}{Category}\textquotesingle{}s name
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_c_r_u_d_service_1_1_repository_1_1_contact_repository_aa0220b7a89f3c22450134eec38edba8d}{CRUDService.\+Repository.\+Contact\+Repository}}.
+
+\Hypertarget{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_aea176d55b7b85052ee6550918428dda2}\index{CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}!FindContactById@{FindContactById}}
+\index{FindContactById@{FindContactById}!CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}}
+\doxysubsubsection{\texorpdfstring{FindContactById()}{FindContactById()}}
+{\footnotesize\ttfamily \label{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_aea176d55b7b85052ee6550918428dda2} 
+Task$<$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_models_1_1_contact}{Contact}}?$>$ CRUDService.\+Repository.\+IContact\+Repository.\+Find\+Contact\+By\+Id (\begin{DoxyParamCaption}\item[{Guid}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves contact by its id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Contacts Guid\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Either \doxylink{class_c_r_u_d_service_1_1_models_1_1_contact}{Contact} object or null
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_c_r_u_d_service_1_1_repository_1_1_contact_repository_a94b5b5fff66d798843bd4f5968f5e5ac}{CRUDService.\+Repository.\+Contact\+Repository}}.
+
+\Hypertarget{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_ad1caf19f03c7d345f96c70338a2bd255}\index{CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}!FindUserEmailById@{FindUserEmailById}}
+\index{FindUserEmailById@{FindUserEmailById}!CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}}
+\doxysubsubsection{\texorpdfstring{FindUserEmailById()}{FindUserEmailById()}}
+{\footnotesize\ttfamily \label{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_ad1caf19f03c7d345f96c70338a2bd255} 
+Task$<$ string?$>$ CRUDService.\+Repository.\+IContact\+Repository.\+Find\+User\+Email\+By\+Id (\begin{DoxyParamCaption}\item[{Guid}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves user email by her/his id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \doxylink{class_c_r_u_d_service_1_1_models_1_1_contact}{Contact}\textquotesingle{}s Guid\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_c_r_u_d_service_1_1_models_1_1_contact}{Contact}\textquotesingle{}s email
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_c_r_u_d_service_1_1_repository_1_1_contact_repository_a59554ad649ba254f6e54ec73a1a5a66b}{CRUDService.\+Repository.\+Contact\+Repository}}.
+
+\Hypertarget{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_ac23099f8c8af7522edafd2f3c3bb01e4}\index{CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}!UpdateContact@{UpdateContact}}
+\index{UpdateContact@{UpdateContact}!CRUDService.Repository.IContactRepository@{CRUDService.Repository.IContactRepository}}
+\doxysubsubsection{\texorpdfstring{UpdateContact()}{UpdateContact()}}
+{\footnotesize\ttfamily \label{interface_c_r_u_d_service_1_1_repository_1_1_i_contact_repository_ac23099f8c8af7522edafd2f3c3bb01e4} 
+Task$<$ bool $>$ CRUDService.\+Repository.\+IContact\+Repository.\+Update\+Contact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_r_u_d_service_1_1_models_1_1_contact}{Contact}}}]{contact}{}\end{DoxyParamCaption})}
+
+
+
+Updates existing contact. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact} & \doxylink{class_c_r_u_d_service_1_1_models_1_1_contact}{Contact} object\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if object was updated successfully false if not
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_c_r_u_d_service_1_1_repository_1_1_contact_repository_afed4f659eac7da3215e56b437b180818}{CRUDService.\+Repository.\+Contact\+Repository}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+CRUDService/\+Repository/IContact\+Repository.\+cs\end{DoxyCompactItemize}

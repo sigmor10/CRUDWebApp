@@ -1,0 +1,232 @@
+\doxysection{CRUDService.\+Controllers.\+Contact\+Controller Class Reference}
+\hypertarget{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller}{}\label{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller}\index{CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}}
+
+
+Controller class which handles http(s) communication, through the use of REST API. It only handles requests/responses, actual operations are relayed to service layer.  
+
+
+Inheritance diagram for CRUDService.\+Controllers.\+Contact\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_ab74efd582ed7223610505498f140d7ea}{Contact\+Controller}} (ILogger$<$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller}{Contact\+Controller}} $>$ logger, \mbox{\hyperlink{interface_c_r_u_d_service_1_1_service_1_1_i_contact_service}{IContact\+Service}} service)
+\begin{DoxyCompactList}\small\item\em Constructor with dependency injections. \end{DoxyCompactList}\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_a2291b818c258ea50889d6e34e09d7af7}{Get\+Contacts}} (int skip, int take)
+\begin{DoxyCompactList}\small\item\em Returns paginated list of Contacts. \end{DoxyCompactList}\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_abe568e741abc1e41c8b920f9a2586ae4}{Get\+Contact}} (Guid id)
+\begin{DoxyCompactList}\small\item\em Returns a detailed Contact with given id. \end{DoxyCompactList}\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_abf76eaec7b8886c4fa245b64e3714acf}{Get\+Categories}} ()
+\begin{DoxyCompactList}\small\item\em Returns list of all categories. \end{DoxyCompactList}\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_a8f2ff1e30ea7d60cb6f413ebed05311f}{Get\+Sub\+Categories}} (int id)
+\begin{DoxyCompactList}\small\item\em Returns list of anmes of all subcategories for given category id. \end{DoxyCompactList}\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_a8575840b0f3fe1e90b591d6e23bb9849}{Get\+Sub\+All\+Categories}} ()
+\begin{DoxyCompactList}\small\item\em Returns list of anmes of all subcategories. \end{DoxyCompactList}\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_ab5a263698c1f20f726ff62b4c59b21f9}{Check\+If\+Email\+Taken}} (\mbox{[}From\+Query\mbox{]} string email)
+\begin{DoxyCompactList}\small\item\em Returns information if email is taken or not. \end{DoxyCompactList}\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_a33d0d1a7d46a3350cce609db181b8190}{Create\+Contact}} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{class_c_r_u_d_service_1_1_d_t_os_1_1_create_contact_request}{Create\+Contact\+Request}} request)
+\begin{DoxyCompactList}\small\item\em Creates new Contact instance. \end{DoxyCompactList}\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_af4c9ee2d7ba316810e827c2346e56f17}{Update\+Contact}} (Guid id, \mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{class_c_r_u_d_service_1_1_d_t_os_1_1_update_contact_request}{Update\+Contact\+Request}} request)
+\begin{DoxyCompactList}\small\item\em Updates existing Contact instance. \end{DoxyCompactList}\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_ae0f01ce745e5d73b672e05c8f25b94f8}{Delete\+Contact}} (Guid id)
+\begin{DoxyCompactList}\small\item\em Deletes existing Contact. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_a4ada4d64a9b5119d22300889c19b49d7}\label{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_a4ada4d64a9b5119d22300889c19b49d7} 
+readonly \mbox{\hyperlink{interface_c_r_u_d_service_1_1_service_1_1_i_contact_service}{IContact\+Service}} {\bfseries \+\_\+contact\+Service}
+\begin{DoxyCompactList}\small\item\em Propery used to access Contact \doxylink{namespace_c_r_u_d_service_1_1_service}{Service}. \end{DoxyCompactList}\item 
+\Hypertarget{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_ac614aa064e8d185682ff3ac3bc21f161}\label{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_ac614aa064e8d185682ff3ac3bc21f161} 
+readonly ILogger$<$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller}{Contact\+Controller}} $>$ {\bfseries \+\_\+logger}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller class which handles http(s) communication, through the use of REST API. It only handles requests/responses, actual operations are relayed to service layer. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_ab74efd582ed7223610505498f140d7ea}\index{CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}!ContactController@{ContactController}}
+\index{ContactController@{ContactController}!CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}}
+\doxysubsubsection{\texorpdfstring{ContactController()}{ContactController()}}
+{\footnotesize\ttfamily \label{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_ab74efd582ed7223610505498f140d7ea} 
+CRUDService.\+Controllers.\+Contact\+Controller.\+Contact\+Controller (\begin{DoxyParamCaption}\item[{ILogger$<$ \mbox{\hyperlink{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller}{Contact\+Controller}} $>$}]{logger}{, }\item[{\mbox{\hyperlink{interface_c_r_u_d_service_1_1_service_1_1_i_contact_service}{IContact\+Service}}}]{service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor with dependency injections. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em logger} & \\
+\hline
+{\em service} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_ab5a263698c1f20f726ff62b4c59b21f9}\index{CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}!CheckIfEmailTaken@{CheckIfEmailTaken}}
+\index{CheckIfEmailTaken@{CheckIfEmailTaken}!CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}}
+\doxysubsubsection{\texorpdfstring{CheckIfEmailTaken()}{CheckIfEmailTaken()}}
+{\footnotesize\ttfamily \label{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_ab5a263698c1f20f726ff62b4c59b21f9} 
+async Task$<$ IAction\+Result $>$ CRUDService.\+Controllers.\+Contact\+Controller.\+Check\+If\+Email\+Taken (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Query\mbox{]} string}]{email}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns information if email is taken or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Email that is to be checked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool saying whether given email already exists in database or not
+\end{DoxyReturn}
+\Hypertarget{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_a33d0d1a7d46a3350cce609db181b8190}\index{CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}!CreateContact@{CreateContact}}
+\index{CreateContact@{CreateContact}!CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}}
+\doxysubsubsection{\texorpdfstring{CreateContact()}{CreateContact()}}
+{\footnotesize\ttfamily \label{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_a33d0d1a7d46a3350cce609db181b8190} 
+async Task$<$ IAction\+Result $>$ CRUDService.\+Controllers.\+Contact\+Controller.\+Create\+Contact (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{class_c_r_u_d_service_1_1_d_t_os_1_1_create_contact_request}{Create\+Contact\+Request}}}]{request}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates new Contact instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & \doxylink{class_c_r_u_d_service_1_1_d_t_os_1_1_create_contact_request}{Create\+Contact\+Request} object with data needed to create neew Contact\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+201 code or 400, depending on whether entry was created or not
+\end{DoxyReturn}
+\Hypertarget{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_ae0f01ce745e5d73b672e05c8f25b94f8}\index{CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}!DeleteContact@{DeleteContact}}
+\index{DeleteContact@{DeleteContact}!CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}}
+\doxysubsubsection{\texorpdfstring{DeleteContact()}{DeleteContact()}}
+{\footnotesize\ttfamily \label{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_ae0f01ce745e5d73b672e05c8f25b94f8} 
+async Task$<$ IAction\+Result $>$ CRUDService.\+Controllers.\+Contact\+Controller.\+Delete\+Contact (\begin{DoxyParamCaption}\item[{Guid}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deletes existing Contact. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Contact\textquotesingle{}s Guid\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+404 code if Contact with given id does not exist 200 code if Contact was sucessfully deleted 
+\end{DoxyReturn}
+\Hypertarget{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_abf76eaec7b8886c4fa245b64e3714acf}\index{CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}!GetCategories@{GetCategories}}
+\index{GetCategories@{GetCategories}!CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}}
+\doxysubsubsection{\texorpdfstring{GetCategories()}{GetCategories()}}
+{\footnotesize\ttfamily \label{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_abf76eaec7b8886c4fa245b64e3714acf} 
+async Task$<$ IAction\+Result $>$ CRUDService.\+Controllers.\+Contact\+Controller.\+Get\+Categories (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns list of all categories. 
+
+\begin{DoxyReturn}{Returns}
+List of all categories in the database
+\end{DoxyReturn}
+\Hypertarget{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_abe568e741abc1e41c8b920f9a2586ae4}\index{CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}!GetContact@{GetContact}}
+\index{GetContact@{GetContact}!CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}}
+\doxysubsubsection{\texorpdfstring{GetContact()}{GetContact()}}
+{\footnotesize\ttfamily \label{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_abe568e741abc1e41c8b920f9a2586ae4} 
+async Task$<$ IAction\+Result $>$ CRUDService.\+Controllers.\+Contact\+Controller.\+Get\+Contact (\begin{DoxyParamCaption}\item[{Guid}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a detailed Contact with given id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Guid of the requested contact\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+404 or requested Contact transformed into \doxylink{class_c_r_u_d_service_1_1_d_t_os_1_1_get_contact_response}{Get\+Contact\+Response} Object
+\end{DoxyReturn}
+\Hypertarget{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_a2291b818c258ea50889d6e34e09d7af7}\index{CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}!GetContacts@{GetContacts}}
+\index{GetContacts@{GetContacts}!CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}}
+\doxysubsubsection{\texorpdfstring{GetContacts()}{GetContacts()}}
+{\footnotesize\ttfamily \label{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_a2291b818c258ea50889d6e34e09d7af7} 
+async Task$<$ IAction\+Result $>$ CRUDService.\+Controllers.\+Contact\+Controller.\+Get\+Contacts (\begin{DoxyParamCaption}\item[{int}]{skip}{, }\item[{int}]{take}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns paginated list of Contacts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em skip} & Defines how many records should be skipped\\
+\hline
+{\em take} & Defines max length of returned list\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns list Of \doxylink{class_c_r_u_d_service_1_1_d_t_os_1_1_base_contact_d_t_o}{Base\+Contact\+DTO} objects, can be empty
+\end{DoxyReturn}
+\Hypertarget{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_a8575840b0f3fe1e90b591d6e23bb9849}\index{CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}!GetSubAllCategories@{GetSubAllCategories}}
+\index{GetSubAllCategories@{GetSubAllCategories}!CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}}
+\doxysubsubsection{\texorpdfstring{GetSubAllCategories()}{GetSubAllCategories()}}
+{\footnotesize\ttfamily \label{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_a8575840b0f3fe1e90b591d6e23bb9849} 
+async Task$<$ IAction\+Result $>$ CRUDService.\+Controllers.\+Contact\+Controller.\+Get\+Sub\+All\+Categories (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns list of anmes of all subcategories. 
+
+\begin{DoxyReturn}{Returns}
+list of all subcategoires in the database
+\end{DoxyReturn}
+\Hypertarget{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_a8f2ff1e30ea7d60cb6f413ebed05311f}\index{CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}!GetSubCategories@{GetSubCategories}}
+\index{GetSubCategories@{GetSubCategories}!CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}}
+\doxysubsubsection{\texorpdfstring{GetSubCategories()}{GetSubCategories()}}
+{\footnotesize\ttfamily \label{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_a8f2ff1e30ea7d60cb6f413ebed05311f} 
+async Task$<$ IAction\+Result $>$ CRUDService.\+Controllers.\+Contact\+Controller.\+Get\+Sub\+Categories (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns list of anmes of all subcategories for given category id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Id of the category, requested subcategories belongg to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of all subcategory names that belong to Category with given id
+\end{DoxyReturn}
+\Hypertarget{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_af4c9ee2d7ba316810e827c2346e56f17}\index{CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}!UpdateContact@{UpdateContact}}
+\index{UpdateContact@{UpdateContact}!CRUDService.Controllers.ContactController@{CRUDService.Controllers.ContactController}}
+\doxysubsubsection{\texorpdfstring{UpdateContact()}{UpdateContact()}}
+{\footnotesize\ttfamily \label{class_c_r_u_d_service_1_1_controllers_1_1_contact_controller_af4c9ee2d7ba316810e827c2346e56f17} 
+async Task$<$ IAction\+Result $>$ CRUDService.\+Controllers.\+Contact\+Controller.\+Update\+Contact (\begin{DoxyParamCaption}\item[{Guid}]{id}{, }\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{class_c_r_u_d_service_1_1_d_t_os_1_1_update_contact_request}{Update\+Contact\+Request}}}]{request}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates existing Contact instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Contact\textquotesingle{}s Guid\\
+\hline
+{\em request} & \doxylink{class_c_r_u_d_service_1_1_d_t_os_1_1_update_contact_request}{Update\+Contact\+Request} object containing new/updated data for existing Contact\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+following http codes\+: 404 if no contact exists with given id, 204 if update was successful 400 if data in \doxylink{class_c_r_u_d_service_1_1_d_t_os_1_1_update_contact_request}{Update\+Contact\+Request} was invalid 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+CRUDService/\+Controllers/Contact\+Controller.\+cs\end{DoxyCompactItemize}

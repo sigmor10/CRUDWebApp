@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace CRUDService.Models
+﻿namespace CRUDService.Models
 {
     /// <summary>
     /// Entity class for Dcitionary table Categories

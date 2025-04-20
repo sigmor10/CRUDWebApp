@@ -1,0 +1,151 @@
+\doxysection{Front\+End.\+Pages.\+Contact\+List Class Reference}
+\hypertarget{class_front_end_1_1_pages_1_1_contact_list}{}\label{class_front_end_1_1_pages_1_1_contact_list}\index{FrontEnd.Pages.ContactList@{FrontEnd.Pages.ContactList}}
+Inheritance diagram for Front\+End.\+Pages.\+Contact\+List\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_front_end_1_1_pages_1_1_contact_list}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override async Task \mbox{\hyperlink{class_front_end_1_1_pages_1_1_contact_list_ac86209638d4a7f30bb9e41eceed6c81f}{On\+Initialized\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Initializes contact list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+async Task \mbox{\hyperlink{class_front_end_1_1_pages_1_1_contact_list_a261773fb5ff38cdbf2e3eea2a9983f90}{Load\+Contact\+List}} ()
+\begin{DoxyCompactList}\small\item\em Fetches paginated list from backend. \end{DoxyCompactList}\item 
+async Task \mbox{\hyperlink{class_front_end_1_1_pages_1_1_contact_list_a2dc79df7a58d311d1f351bf0685421ef}{Increment\+Skip}} ()
+\begin{DoxyCompactList}\small\item\em Next list page. \end{DoxyCompactList}\item 
+async Task \mbox{\hyperlink{class_front_end_1_1_pages_1_1_contact_list_affa2cff3aee14120235ac61ea5132264}{Decrement\+Skip}} ()
+\begin{DoxyCompactList}\small\item\em Previous list page. \end{DoxyCompactList}\item 
+async Task \mbox{\hyperlink{class_front_end_1_1_pages_1_1_contact_list_a78f76efae37019a4b84a0be92c3ac3fa}{Delete\+Contact}} (Guid id)
+\begin{DoxyCompactList}\small\item\em Sends delete request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_front_end_1_1_pages_1_1_contact_list_add47e34b8756f9b1a08f6e1a65bedaa0}{Redirect\+To\+Edit}} (Guid id)
+\begin{DoxyCompactList}\small\item\em Redirects to \doxylink{class_front_end_1_1_models_1_1_contact}{Contact}\textquotesingle{}s edit view. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_front_end_1_1_pages_1_1_contact_list_a3a152b6c30587f5a9010eb2dc490e2b9}{Redirect\+To\+Details}} (Guid id)
+\begin{DoxyCompactList}\small\item\em Redirects to \doxylink{class_front_end_1_1_models_1_1_contact}{Contact}\textquotesingle{}s details view. \end{DoxyCompactList}\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_list_a416c92a65a98b68c3276fa5e6201675a}\label{class_front_end_1_1_pages_1_1_contact_list_a416c92a65a98b68c3276fa5e6201675a} 
+void {\bfseries Redirect\+To\+Add} ()
+\begin{DoxyCompactList}\small\item\em Redirects to add contact view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_list_acfe84d0ed7e53f3738a8b77b9d8d728e}\label{class_front_end_1_1_pages_1_1_contact_list_acfe84d0ed7e53f3738a8b77b9d8d728e} 
+List$<$ \mbox{\hyperlink{class_front_end_1_1_models_1_1_contact}{Contact}} $>$? {\bfseries contacts}
+\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_list_addfc5af6f5127744919689a533e1d316}\label{class_front_end_1_1_pages_1_1_contact_list_addfc5af6f5127744919689a533e1d316} 
+int {\bfseries skip} = 0
+\item 
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_list_a1ac996fcab61461c097be4b03b84aa95}\label{class_front_end_1_1_pages_1_1_contact_list_a1ac996fcab61461c097be4b03b84aa95} 
+int {\bfseries take} = 7
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_list_affa2cff3aee14120235ac61ea5132264}\index{FrontEnd.Pages.ContactList@{FrontEnd.Pages.ContactList}!DecrementSkip@{DecrementSkip}}
+\index{DecrementSkip@{DecrementSkip}!FrontEnd.Pages.ContactList@{FrontEnd.Pages.ContactList}}
+\doxysubsubsection{\texorpdfstring{DecrementSkip()}{DecrementSkip()}}
+{\footnotesize\ttfamily \label{class_front_end_1_1_pages_1_1_contact_list_affa2cff3aee14120235ac61ea5132264} 
+async Task Front\+End.\+Pages.\+Contact\+List.\+Decrement\+Skip (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Previous list page. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_list_a78f76efae37019a4b84a0be92c3ac3fa}\index{FrontEnd.Pages.ContactList@{FrontEnd.Pages.ContactList}!DeleteContact@{DeleteContact}}
+\index{DeleteContact@{DeleteContact}!FrontEnd.Pages.ContactList@{FrontEnd.Pages.ContactList}}
+\doxysubsubsection{\texorpdfstring{DeleteContact()}{DeleteContact()}}
+{\footnotesize\ttfamily \label{class_front_end_1_1_pages_1_1_contact_list_a78f76efae37019a4b84a0be92c3ac3fa} 
+async Task Front\+End.\+Pages.\+Contact\+List.\+Delete\+Contact (\begin{DoxyParamCaption}\item[{Guid}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Sends delete request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \doxylink{class_front_end_1_1_models_1_1_contact}{Contact}\textquotesingle{}s Guid\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_list_a2dc79df7a58d311d1f351bf0685421ef}\index{FrontEnd.Pages.ContactList@{FrontEnd.Pages.ContactList}!IncrementSkip@{IncrementSkip}}
+\index{IncrementSkip@{IncrementSkip}!FrontEnd.Pages.ContactList@{FrontEnd.Pages.ContactList}}
+\doxysubsubsection{\texorpdfstring{IncrementSkip()}{IncrementSkip()}}
+{\footnotesize\ttfamily \label{class_front_end_1_1_pages_1_1_contact_list_a2dc79df7a58d311d1f351bf0685421ef} 
+async Task Front\+End.\+Pages.\+Contact\+List.\+Increment\+Skip (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Next list page. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_list_a261773fb5ff38cdbf2e3eea2a9983f90}\index{FrontEnd.Pages.ContactList@{FrontEnd.Pages.ContactList}!LoadContactList@{LoadContactList}}
+\index{LoadContactList@{LoadContactList}!FrontEnd.Pages.ContactList@{FrontEnd.Pages.ContactList}}
+\doxysubsubsection{\texorpdfstring{LoadContactList()}{LoadContactList()}}
+{\footnotesize\ttfamily \label{class_front_end_1_1_pages_1_1_contact_list_a261773fb5ff38cdbf2e3eea2a9983f90} 
+async Task Front\+End.\+Pages.\+Contact\+List.\+Load\+Contact\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Fetches paginated list from backend. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_list_ac86209638d4a7f30bb9e41eceed6c81f}\index{FrontEnd.Pages.ContactList@{FrontEnd.Pages.ContactList}!OnInitializedAsync@{OnInitializedAsync}}
+\index{OnInitializedAsync@{OnInitializedAsync}!FrontEnd.Pages.ContactList@{FrontEnd.Pages.ContactList}}
+\doxysubsubsection{\texorpdfstring{OnInitializedAsync()}{OnInitializedAsync()}}
+{\footnotesize\ttfamily \label{class_front_end_1_1_pages_1_1_contact_list_ac86209638d4a7f30bb9e41eceed6c81f} 
+override async Task Front\+End.\+Pages.\+Contact\+List.\+On\+Initialized\+Async (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Initializes contact list. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_list_a3a152b6c30587f5a9010eb2dc490e2b9}\index{FrontEnd.Pages.ContactList@{FrontEnd.Pages.ContactList}!RedirectToDetails@{RedirectToDetails}}
+\index{RedirectToDetails@{RedirectToDetails}!FrontEnd.Pages.ContactList@{FrontEnd.Pages.ContactList}}
+\doxysubsubsection{\texorpdfstring{RedirectToDetails()}{RedirectToDetails()}}
+{\footnotesize\ttfamily \label{class_front_end_1_1_pages_1_1_contact_list_a3a152b6c30587f5a9010eb2dc490e2b9} 
+void Front\+End.\+Pages.\+Contact\+List.\+Redirect\+To\+Details (\begin{DoxyParamCaption}\item[{Guid}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Redirects to \doxylink{class_front_end_1_1_models_1_1_contact}{Contact}\textquotesingle{}s details view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \doxylink{class_front_end_1_1_models_1_1_contact}{Contact}\textquotesingle{}s Guid\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_front_end_1_1_pages_1_1_contact_list_add47e34b8756f9b1a08f6e1a65bedaa0}\index{FrontEnd.Pages.ContactList@{FrontEnd.Pages.ContactList}!RedirectToEdit@{RedirectToEdit}}
+\index{RedirectToEdit@{RedirectToEdit}!FrontEnd.Pages.ContactList@{FrontEnd.Pages.ContactList}}
+\doxysubsubsection{\texorpdfstring{RedirectToEdit()}{RedirectToEdit()}}
+{\footnotesize\ttfamily \label{class_front_end_1_1_pages_1_1_contact_list_add47e34b8756f9b1a08f6e1a65bedaa0} 
+void Front\+End.\+Pages.\+Contact\+List.\+Redirect\+To\+Edit (\begin{DoxyParamCaption}\item[{Guid}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Redirects to \doxylink{class_front_end_1_1_models_1_1_contact}{Contact}\textquotesingle{}s edit view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \doxylink{class_front_end_1_1_models_1_1_contact}{Contact}\textquotesingle{}s Guid\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Front\+End/\+Pages/Contact\+List.\+razor.\+cs\end{DoxyCompactItemize}

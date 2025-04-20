@@ -31,34 +31,5 @@
 </EditForm>
 
 @code {
-    private User user = new();
-
-    // Redirects logged in users to homepage
-    protected override async Task OnInitializedAsync()
-    {
-        if (AuthService.IsLoggedIn)
-        {
-            Navigation.NavigateTo("/");
-        }
-    }
-
-    // Sends Login request
-    private async Task LogIn()
-    {
-        if (user == null) return;
-
-        //TODO
-        var response = await Http.PostAsJsonAsync($"api/auth/login", user);
-
-        if (response.IsSuccessStatusCode)
-        {
-            var token = await response.Content.ReadAsStringAsync();
-            await AuthService.SetToken(token);
-            Navigation.NavigateTo($"/contacts");
-        }
-        else
-        {
-            Console.WriteLine("Failed to add contact");
-        }
-    }
+    
 }

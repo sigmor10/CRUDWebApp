@@ -3,6 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FrontEnd.Models
 {
+    /// <summary>
+    /// Class representing a user.
+    /// Annotated for early valdiation and early rejection of invalid requests.
+    /// </summary>
     public class User
     {
         [Required]

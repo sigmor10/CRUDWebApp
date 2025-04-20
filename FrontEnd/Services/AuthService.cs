@@ -6,7 +6,9 @@ using System.Security.Claims;
 
 namespace FrontEnd.Services
 {
-    // Authentication and jwt token handling class
+    /// <summary>
+    /// Authentication and jwt token handling class
+    /// </summary>
     public class AuthService
     {
         private readonly ILocalStorageService _localStorage;
@@ -19,7 +21,10 @@ namespace FrontEnd.Services
             _localStorage = localStorage;
         }
 
-        // Initializes token and authorization mechanics
+        /// <summary>
+        /// Initializes token and authorization mechanics
+        /// </summary>
+        /// <returns></returns>
         public async Task InitializeAsync()
         {
             var token = await _localStorage.GetItemAsync<string>("authToken");
@@ -44,14 +49,21 @@ namespace FrontEnd.Services
             NotifyStateChanged();
         }
 
-        // Puts token in local storage
+        /// <summary>
+        /// Puts token in local storage
+        /// </summary>
+        /// <param name="token">Jwt token</param>
+        /// <returns></returns>
         public async Task SetToken(string token)
         {
             await _localStorage.SetItemAsync("authToken", token);
             await InitializeAsync();
         }
 
-        // Logs user out and deletes token
+        /// <summary>
+        /// Logs user out and deletes token
+        /// </summary>
+        /// <returns></returns>
         public async Task Logout()
         {
             await _localStorage.RemoveItemAsync("authToken");

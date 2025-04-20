@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['name_0',['Name',['../class_c_r_u_d_service_1_1_d_t_os_1_1_base_contact_d_t_o.html#ae54a64fdd5ee58859868119c383994c2',1,'CRUDService.DTOs.BaseContactDTO.Name'],['../class_c_r_u_d_service_1_1_models_1_1_category.html#acf7ab6fe04f6c4a36c1a7efe489c9f1d',1,'CRUDService.Models.Category.Name'],['../class_c_r_u_d_service_1_1_models_1_1_contact.html#a50631d912b5301d0ddc5856685e211b9',1,'CRUDService.Models.Contact.Name'],['../class_c_r_u_d_service_1_1_models_1_1_sub_category.html#ab463f62292afa221a554f21fde0d758b',1,'CRUDService.Models.SubCategory.Name'],['../class_front_end_1_1_models_1_1_category.html#a0071ae582e1144ee9d30d1d66448c416',1,'FrontEnd.Models.Category.Name'],['../class_front_end_1_1_models_1_1_contact.html#ad72ca21b132ef2ccad2f20a751133517',1,'FrontEnd.Models.Contact.Name'],['../class_front_end_1_1_models_1_1_sub_category.html#a6d055c979e61cc8739bcf65efc26780b',1,'FrontEnd.Models.SubCategory.Name']]]
+];
