@@ -7,7 +7,7 @@ The **CRUDWebApp** is composed of 2 projects:
 - `CRUDService`: based on ASP.NET Core which serves as backend application
 - `FrontEnd`: based on Blazor WebAssembly (WASM) which serves as SPA frontend application.
 
-To view full documentation open ./html/index.html fiel in a browser.
+For detailed information open refman.pdf.
 
 ## Caution
 
