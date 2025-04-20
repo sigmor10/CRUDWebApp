@@ -1,0 +1,100 @@
+﻿@page "/contacts/{id:guid}"
+@using FrontEnd.Models
+@using FrontEnd.Services;
+@using System.Net.Http.Headers;
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@inject AuthService AuthService
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+
+<PageTitle>Szczegóły kotaktu</PageTitle>
+
+<h1>Szczegóły kotaktu</h1>
+
+
+
+<table style="border-collapse: collapse; width: 100%;" border="1" cellpadding="8">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Kategoria</th>
+            <th>Podkategoria</th>
+            <th>Numer telefonu</th>
+            <th>Data urodzenia</th>
+            <th>Edycja</th>
+            <th>Usuwanie</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (contact != null)
+        {
+            <tr>
+                <td>@contact.Email</td>
+                <td>@contact.Name</td>
+                <td>@contact.Surname</td>
+                <td>@contact.Category</td>
+                <td>@contact.SubCategory</td>
+                <td>@contact.Phone</td>
+                <td>@contact.BirthDate</td>
+                <td>
+                    <button @onclick="() => RedirectToEdit(contact.Id)">Edytuj</button>
+                </td>
+                <td>
+                    <button @onclick="() => DeleteContact(contact.Id)">Usuń</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<button class="btn btn-secondary" @onclick="RedirectToList">Wróć dp listy</button>
+
+@code {
+    [Parameter]
+    public Guid id { get; set; }
+    private GetContactResponse? contact;
+
+    // Fetches paginated list from backend
+    private async Task LoadContactList()
+    {
+        contact = await Http
+            .GetFromJsonAsync<GetContactResponse>($"api/contacts/{id}");
+    }
+
+    // Initializes contact list
+    protected override async Task OnParametersSetAsync()
+    {
+        await LoadContactList();
+    }
+
+    // Sends delete request
+    private async Task DeleteContact(Guid id)
+    {
+        if (AuthService.IsLoggedIn)
+        {
+            if (contact == null) return;
+            var token = await LocalStorage.GetItemAsync<string>("authToken");
+            var request = new HttpRequestMessage(HttpMethod.Delete, $"api/contacts/{id}/delete");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            var response = await Http.SendAsync(request);
+            Navigation.NavigateTo("/");
+        }
+    }
+
+    // Redirects to Contact's edit view
+    private void RedirectToEdit(Guid id)
+    {
+        if (AuthService.IsLoggedIn)
+            Navigation.NavigateTo($"contacts/{id}/edit");
+    }
+
+    // Redirects to contact list view
+    private void RedirectToList()
+    {
+        Navigation.NavigateTo("contacts");
+    }
+}

@@ -1,0 +1,64 @@
+﻿@page "/login"
+@using FrontEnd.Models
+@using FrontEnd.Services
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@inject AuthService AuthService
+
+<PageTitle>Zaloguj się</PageTitle>
+
+<h1>Zaloguj się</h1>
+<!-- Contact edit form -->
+<EditForm Model="@user" OnValidSubmit="LogIn">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <!-- Email form field-->
+    <div>
+        <label>Email</label>
+        <InputText class="form-control" @bind-Value="user.Email" />
+        <ValidationMessage For="@(() => user.Email)" />
+    </div>
+
+    <!-- Password form field-->
+    <div>
+        <label>Hasło</label>
+        <InputText class="form-control" type="password" @bind-Value="user.Password" />
+        <ValidationMessage For="@(() => user.Password)" />
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Zaloguj się</button>
+</EditForm>
+
+@code {
+    private User user = new();
+
+    // Redirects logged in users to homepage
+    protected override async Task OnInitializedAsync()
+    {
+        if (AuthService.IsLoggedIn)
+        {
+            Navigation.NavigateTo("/");
+        }
+    }
+
+    // Sends Login request
+    private async Task LogIn()
+    {
+        if (user == null) return;
+
+        //TODO
+        var response = await Http.PostAsJsonAsync($"api/auth/login", user);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var token = await response.Content.ReadAsStringAsync();
+            await AuthService.SetToken(token);
+            Navigation.NavigateTo($"/contacts");
+        }
+        else
+        {
+            Console.WriteLine("Failed to add contact");
+        }
+    }
+}

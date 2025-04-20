@@ -1,0 +1,51 @@
+﻿@using Blazored.LocalStorage
+@using FrontEnd.Services
+@inherits LayoutComponentBase
+@inject NavigationManager Navigation
+@inject AuthService AuthService
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            @if (AuthService.IsLoggedIn)
+            {
+                <p>
+                    @AuthService.UserEmail<span/>
+                    <button @onclick="Logout" class="btn btn-secondary">Wyloguj się</button>
+                </p>
+            }
+            else{
+                <button @onclick="RedirectToLogin" class="btn btn-secondary">Zaloguj się</button>
+            }
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await AuthService.InitializeAsync();
+        AuthService.OnChange += StateHasChanged;
+    }
+
+    private async Task Logout()
+    {
+        await AuthService.Logout();
+        Navigation.NavigateTo("/");
+    }
+
+    private void RedirectToLogin()
+    {
+        Navigation.NavigateTo("/login");
+    }
+
+    public void Dispose() => AuthService.OnChange -= StateHasChanged;
+}

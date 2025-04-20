@@ -1,0 +1,257 @@
+﻿@page "/contacts/add"
+@using FrontEnd.Models
+@using FrontEnd.Services;
+@using System.Net.Http.Headers;
+@using System.Text.Json
+@using System.Text
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@inject AuthService AuthService
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+
+<PageTitle>Dodaj kontakt</PageTitle>
+
+<h1>Dodaj kontakt</h1>
+
+@if (contact != null)
+{
+    <!-- Contact edit form -->
+    <EditForm Model="@contact" OnValidSubmit="SaveContact">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <!-- Name form field-->
+        <div>
+            <label>Imię</label>
+            <InputText class="form-control" @bind-Value="contact.Name" />
+            <ValidationMessage For="@(() => contact.Name)" />
+        </div>
+
+        <!-- Surname form field-->
+        <div>
+            <label>Nazwisko</label>
+            <InputText class="form-control" @bind-Value="contact.Surname" />
+            <ValidationMessage For="@(() => contact.Surname)" />
+        </div>
+
+        <!-- Email form field-->
+        <div>
+            @if (emailExists)
+            {
+                <div class="text-danger">Ten email jest już w użyciu.</div>
+            }
+            <label>Email</label>
+            <InputText class="form-control" @bind-Value="contact.Email" />
+            <ValidationMessage For="@(() => contact.Email)" />
+        </div>
+
+        <!-- Password form field-->
+        <div>
+            <label>Hasło</label>
+            <InputText class="form-control" type="password" @bind-Value="contact.Password" />
+            <ValidationMessage For="@(() => contact.Password)" />
+        </div>
+        @if(categories != null)
+        {
+            <!-- Category form field-->
+            <div>
+                <label>Kategoria</label>
+                <InputSelect class="form-control" @bind-Value="selectedCategory">
+                    @foreach (var category in categories)
+                    {
+                        <option value="@category.Id">@category.Name</option>
+                    }
+                </InputSelect>
+            </div>
+
+            <!-- Subcategory form field-->
+            <div>
+                <label>Podkategoria</label>
+
+                @if (!IsCustomSubCategory)
+                {
+                    <InputSelect class="form-control" @bind-Value="selectedSubCategory">
+                        @foreach (var sub in filteredSubCats)
+                        {
+                            <option value="@sub.Name">@sub.Name</option>
+                        }
+                    </InputSelect>
+                }
+                else
+                {
+                    <InputText class="form-control" @bind-Value="selectedSubCategory" />
+                }
+            </div>
+        }
+        <!-- Phone form field-->
+        <div>
+            <label>Numer telefonu</label>
+            <InputText class="form-control" @bind-Value="contact.Phone" />
+            <ValidationMessage For="@(() => contact.Phone)" />
+        </div>
+
+        <!-- BirthDate form field-->
+        <div>
+            <label>Data urodzenia</label>
+            <InputDate class="form-control" @bind-Value="contact.BirthDate" />
+            <ValidationMessage For="@(() => contact.BirthDate)" />
+        </div>
+
+
+        <button type="reset" class="btn btn-secondary" @onclick="RedirectToList">Reset</button>
+        <button type="submit" class="btn btn-secondary">Wyślij</button>
+    </EditForm>
+}
+else
+{
+    <p>Wybrano nie prawidłowy kontakt do edycji.</p>
+}
+
+<br />
+<br />
+
+<button class="btn btn-secondary" @onclick="RedirectToList">Wróć dp listy</button>
+
+@code {
+    private CreateContactRequest? contact = new();
+    private List<Category>? categories;
+    private List<SubCategory>? subCats;
+    private List<SubCategory> filteredSubCats = new();
+    private bool emailExists = false;
+
+    private bool IsCustomSubCategory = false;
+    private string _selectedSubCategory;
+    private string selectedSubCategory
+    {
+        get => _selectedSubCategory;
+        set {  
+            if (_selectedSubCategory != value)
+            {
+                _selectedSubCategory = value;
+                contact.SubCategory = selectedSubCategory;
+            }
+        }
+    }
+    private int _selectedCategory;
+    public int selectedCategory
+    {
+        get => _selectedCategory;
+        set
+        {
+            if (_selectedCategory != value)
+            {
+                _selectedCategory = value;
+                FilterSubCategories();
+            }
+        }
+    }
+
+    // Redirects unauthorized users to the login page
+    protected override async Task OnInitializedAsync()
+    {
+        if (!AuthService.IsLoggedIn)
+        {
+            Navigation.NavigateTo("/login");
+        }
+    }
+
+    // Sets Entity and form to default values
+    private void SetToDefaultValues()
+    {
+        contact = new();
+        selectedCategory = categories.Select(c => c.Id).First();
+
+        contact.CategoryId = selectedCategory;
+        contact.SubCategory = subCats
+            .Where(x => x.CategoryId == selectedCategory)
+            .Select(c => c.Name)
+            .First();
+    }
+
+    // Fetches paginated list from backend
+    private async Task LoadContent()
+    {
+        categories = await Http
+            .GetFromJsonAsync<List<Category>>($"api/categories");
+        subCats = await Http
+            .GetFromJsonAsync<List<SubCategory>>($"api/subcategories");
+        selectedCategory = categories.Select(c => c.Id).First();
+
+        contact.CategoryId = selectedCategory;
+        contact.SubCategory = subCats
+            .Where(x => x.CategoryId == selectedCategory)
+            .Select(c => c.Name)
+            .First();
+    }
+
+    // Initializes contact list
+    protected override async Task OnParametersSetAsync()
+    {
+        await LoadContent();
+    }
+
+    // Filters SubCategories to select only one viable for given category
+    private void FilterSubCategories()
+    {
+        filteredSubCats = subCats
+            .Where(x => x.CategoryId == selectedCategory)
+            .ToList();
+
+        IsCustomSubCategory = filteredSubCats.Count == 0;
+
+        if (filteredSubCats.Count != 0)
+            selectedSubCategory = filteredSubCats.Select(x => x.Name).First();
+
+        StateHasChanged();
+    }
+
+    // Checks if given email is already in use by other user
+    private async Task<bool> ValidateEmael()
+    {
+        var encodedEmail = Uri.EscapeDataString(contact.Email);
+        var result = await Http
+            .GetFromJsonAsync<bool>($"api/email?email={encodedEmail}");
+
+        emailExists = result;
+        return emailExists;
+    }
+
+    // Saves edited contact
+    private async Task SaveContact()
+    {
+        if (contact == null) return;
+
+        if (await ValidateEmael())
+        {
+            StateHasChanged();
+            return;
+        }
+
+        contact.CategoryId = selectedCategory;
+        contact.SubCategory = selectedSubCategory;
+
+        var json = JsonSerializer.Serialize(contact);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+        var token = await LocalStorage.GetItemAsync<string>("authToken");
+        var request = new HttpRequestMessage(HttpMethod.Post, $"api/contacts/add");
+        request.Content = content;
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+        var response = await Http.SendAsync(request);
+
+        if (response.IsSuccessStatusCode)
+        {
+            Navigation.NavigateTo($"/contacts");
+        }
+        else
+        {
+            Console.WriteLine("Failed to save contact");
+        }
+    }
+
+    // Redirects to contact list view
+    private void RedirectToList()
+    {
+        Navigation.NavigateTo("contacts");
+    }
+}

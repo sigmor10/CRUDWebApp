@@ -1,0 +1,160 @@
+﻿@page "/contacts"
+@using FrontEnd.Models
+@using FrontEnd.Services;
+@using System.Net.Http.Headers;
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@inject AuthService AuthService
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+
+<PageTitle>Lista kotaktów</PageTitle>
+
+<h1>Lista kotaktów</h1>
+
+
+@if (contacts != null)
+{
+    <table style="border-collapse: collapse; width: 100%;" border="1" cellpadding="8">
+        <thead>
+            <tr>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Imię
+                </th>
+                <th>
+                    Nazwisko
+                </th>
+                <th>
+                    Szczegóły
+                </th>
+                <th>
+                    Edycja
+                </th>
+                <th>
+                    Usuwanie
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Contact contact in contacts)
+            {
+                <tr>
+                    <td>
+                        @contact.Email
+                    </td>
+                    <td>
+                        @contact.Name
+                    </td>
+                    <td>
+                        @contact.Surname
+                    </td>
+                    <td>
+                        <button @onclick="() => RedirectToDetails(contact.Id)">Szczegóły</button>
+                    </td>
+                    <td>
+                        <button @onclick="() => RedirectToEdit(contact.Id)">Edytuj</button>
+                    </td>
+                    <td>
+                        <button @onclick="() => DeleteContact(contact.Id)">Usuń</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h2>404</h2>
+    <p>Brak listy kontaktów</p>
+}
+
+
+<button class="btn btn-secondary" disabled="@(AuthService.IsLoggedIn == false)"
+@onclick="RedirectToAdd">Dodaj nowy kontakt</button>
+<br/>
+<br/>
+<button class="btn btn-primary" @onclick="DecrementSkip">Poprzednia</button>
+<button class="btn btn-primary" @onclick="IncrementSkip">Następna</button>
+
+@code {
+    private List<Contact>? contacts;
+    private int skip = 0;
+    private int take = 7;
+
+    // Fetches paginated list from backend
+    private async Task LoadContactList()
+    {
+        contacts = await Http
+            .GetFromJsonAsync<List<Contact>>($"api/contacts/{skip}/{take}");
+    }
+
+    // Initializes contact list
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadContactList();
+    }
+
+    // Next list page
+    private async Task IncrementSkip()
+    {
+        skip += take;
+        await LoadContactList();
+        StateHasChanged();
+    }
+
+    // Previous list page
+    private async Task DecrementSkip()
+    {
+        skip -= take;
+
+        if (skip < 0) skip = 0;
+
+        await LoadContactList();
+        StateHasChanged();
+    }
+
+    // Sends delete request
+    private async Task DeleteContact(Guid id)
+    {
+        if (AuthService.IsLoggedIn)
+        {
+            if (contacts == null) return;
+            var token = await LocalStorage.GetItemAsync<string>("authToken");
+            var request = new HttpRequestMessage(HttpMethod.Delete, $"api/contacts/{id}/delete");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            var response = await Http.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+                var contact = contacts.First(x => x.Id == id);
+                if (contact != null)
+                {
+                    contacts.Remove(contact);
+                    StateHasChanged();
+                }
+            }
+        }
+    }
+
+    // Redirects to Contact's edit view
+    private void RedirectToEdit(Guid id)
+    {
+        if (AuthService.IsLoggedIn)
+            Navigation.NavigateTo($"contacts/{id}/edit");
+    }
+
+    // Redirects to Contact's details view
+    private void RedirectToDetails(Guid id)
+    {
+        Navigation.NavigateTo($"contacts/{id}");
+    }
+
+    // Redirects to add contact view
+    private void RedirectToAdd()
+    {
+        if (AuthService.IsLoggedIn)
+            Navigation.NavigateTo($"contacts/add");
+    }
+}
