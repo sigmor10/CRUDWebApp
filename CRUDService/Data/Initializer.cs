@@ -4,12 +4,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CRUDService.Data
 {
-
-    // Populates empty database tables
+    /// <summary>
+    /// Populates empty database tables
+    /// </summary>
     public static class Initializer
     {
+        /// <summary>
+        /// Initializes empty databse tables
+        /// </summary>
+        /// <param name="context">Object that allows access to database</param>
+        /// <returns></returns>
         public static async Task InitializeAsync(AppDbContext context)
         {
+
             // Apply any pending migrations
             await context.Database.MigrateAsync();
 
@@ -32,7 +39,11 @@ namespace CRUDService.Data
             await SeedContactsAsync(context);
         }
 
-        // Seeds SubCategories if empty
+        /// <summary>
+        ///Seeds SubCategories table if empty 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public static async Task SeedSubCategoriesAsync(AppDbContext context)
         {
             if (!context.SubCategories.Any())
@@ -54,7 +65,11 @@ namespace CRUDService.Data
             }
         }
 
-        // Seeds Contacts if empty
+        /// <summary>
+        /// Seeds Contacts table if empty
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public static async Task SeedContactsAsync(AppDbContext context)
         {
             if (!context.Contacts.Any())

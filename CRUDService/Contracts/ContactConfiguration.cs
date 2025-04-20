@@ -4,9 +4,15 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CRUDService.Contracts
 {
-    // Class needed for configuring specific rules of its table in the db
+    /// <summary>
+    /// Class needed for configuring specific rules of Contacts table in the database
+    /// </summary>
     public class ContactConfiguration : IEntityTypeConfiguration<Contact>
     {
+        /// <summary>
+        /// Sets configuration of the Contacts table
+        /// </summary>
+        /// <param name="builder"></param>
         public void Configure(EntityTypeBuilder<Contact> builder)
         {
             // Setting PK and required constraints on fields

@@ -5,15 +5,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CRUDService.Repository
 {
-    // Implements repository logic related to access to the database
+    /// <summary>
+    /// Implements repository logic related to access to the database
+    /// </summary>
     public class ContactRepository : IContactRepository
     {
         private readonly AppDbContext _context;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="context"></param>
         public ContactRepository (AppDbContext context)
         {
             _context = context;
         }
+
 
         public async Task<bool> CheckIfIdExists(Guid id)
         {

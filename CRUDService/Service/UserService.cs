@@ -14,6 +14,11 @@ namespace CRUDService.Service
         private readonly IUserRepository _userRepo;
         private readonly IConfiguration _config;
 
+        /// <summary>
+        /// Constructor supporting DI
+        /// </summary>
+        /// <param name="userRepo">Injected IUserRepository object</param>
+        /// <param name="config">Injected IConfiguration object</param>
         public UserService(
             IUserRepository userRepo,
             IConfiguration config)

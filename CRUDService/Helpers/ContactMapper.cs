@@ -3,10 +3,16 @@ using CRUDService.Models;
 
 namespace CRUDService.Helpers
 {
-    // Class contains methods used to transform Contact entity to and from DTO objects
+    /// <summary>
+    /// Class contains methods used to transform Contact entity to and from DTO objects
+    /// </summary>
     public static class ContactMapper
     {
-        // Transforms Contact entity into a simplified DTO object
+        /// <summary>
+        /// Transforms Contact entity into a simplified DTO object.
+        /// </summary>
+        /// <param name="contact">Contact object</param>
+        /// <returns>BaseContactDTO object</returns>
         public static BaseContactDTO ToBaseContactDTO(Contact contact)
         {
             return new BaseContactDTO
@@ -18,13 +24,22 @@ namespace CRUDService.Helpers
             };
         }
 
-        // Transforms lsit of Contact entity objects into a list of BaseContactDTO objects
+        /// <summary>
+        /// Transforms lsit of Contact entity objects into a list of BaseContactDTO objects
+        /// </summary>
+        /// <param name="contacts">Contact object</param>
+        /// <returns>List of BaseContactDTO objects</returns>
         public static List<BaseContactDTO> ToContactsResponse(List<Contact> contacts)
         {
             return contacts.Select(ToBaseContactDTO).ToList();
         }
 
-        // Transforms Contact entity into a detailed DTO onject
+        /// <summary>
+        /// Transforms Contact entity into a detailed DTO onject
+        /// </summary>
+        /// <param name="contact">Contact object</param>
+        /// <param name="categoryName">Name of a category</param>
+        /// <returns>GetContactResponse object</returns>
         public static GetContactResponse ToContactResponse(Contact contact, string categoryName)
         {
             return new GetContactResponse
@@ -40,7 +55,11 @@ namespace CRUDService.Helpers
             };
         }
 
-        // Creates Contact entity from a CreateContactRequest DTO
+        /// <summary>
+        /// Creates Contact entity from a CreateContactRequest DTO
+        /// </summary>
+        /// <param name="request">CreateContactRequest object</param>
+        /// <returns>Contact object</returns>
         public static Contact ToContact(CreateContactRequest request)
         {
             return new Contact
@@ -56,7 +75,11 @@ namespace CRUDService.Helpers
             };
         }
 
-        // Creates Contact entity from a UpdateContactRequest DTO
+        /// <summary>
+        /// Creates Contact entity from a UpdateContactRequest DTO
+        /// </summary>
+        /// <param name="request">UpdateContactRequest object</param>
+        /// <returns>Contact object</returns>
         public static Contact UpdateRequestToContact(UpdateContactRequest request)
         {
             return new Contact

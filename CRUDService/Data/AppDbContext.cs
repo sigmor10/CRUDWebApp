@@ -4,7 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CRUDService.Data
 {
-    // Class used to manage the connection to the database.
+    /// <summary>
+    /// Class used to manage the connection to the database.
+    /// </summary>
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
@@ -16,7 +18,10 @@ namespace CRUDService.Data
 
         public DbSet<SubCategory> SubCategories { get; set; }
 
-        // Applies custom rules to properties of columns that are based on class fields
+        /// <summary>
+        /// Applies custom rules to properties of columns that are based on class fields
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Contact table

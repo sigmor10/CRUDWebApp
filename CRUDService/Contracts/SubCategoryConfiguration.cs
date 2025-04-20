@@ -4,9 +4,15 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CRUDService.Contracts
 {
-    // Class needed for configuring specific rules of its table in the db
+    /// <summary>
+    /// Class needed for configuring specific rules of its table in the db
+    /// </summary>
     public class SubCategoryConfiguration : IEntityTypeConfiguration<SubCategory>
     {
+        /// <summary>
+        /// Sets configuration of the Contacts table
+        /// </summary>
+        /// <param name="builder"></param>
         public void Configure(EntityTypeBuilder<SubCategory> builder)
         {
             // Declaring id as PK and setting it to auto-increment on database side

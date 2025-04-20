@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CRUDService.Models
 {
+    /// <summary>
+    /// Class representing a user
+    /// </summary>
     public class User
     {
         [Required]

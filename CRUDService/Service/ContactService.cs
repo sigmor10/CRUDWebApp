@@ -5,11 +5,17 @@ using System.Text.RegularExpressions;
 
 namespace CRUDService.Service
 {
-    // Implements bussiness logic and mediates between contrler and repository layers
+    /// <summary>
+    /// Implements bussiness logic and mediates between contrler and repository layers
+    /// </summary>
     public class ContactService : IContactService
     {
         private readonly IContactRepository _contactRepo;
 
+        /// <summary>
+        /// Constructor for supporting injections
+        /// </summary>
+        /// <param name="contactRepo">Injected ContactRepository object</param>
         public ContactService(IContactRepository contactRepo)
         {
             _contactRepo = contactRepo;

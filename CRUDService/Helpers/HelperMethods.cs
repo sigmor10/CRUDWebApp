@@ -5,10 +5,18 @@ using System.Text.RegularExpressions;
 
 namespace CRUDService.Helpers
 {
-    // Collection of helper methods
+    /// <summary>
+    /// Collection of helper methods
+    /// </summary>
     public static class HelperMethods
     {
-        // Validates common properties
+        /// <summary>
+        /// Validates common properties
+        /// </summary>
+        /// <param name="contact">Contact object to be validated</param>
+        /// <param name="categories">List of category ids</param>
+        /// <param name="subCategories">List of subcategory names for given category</param>
+        /// <returns>true if properties are valid, otherwise false</returns>
         public static bool ValidateProperties(
             Contact contact, 
             List<int> categories,
@@ -29,7 +37,11 @@ namespace CRUDService.Helpers
             return true;
         }
 
-        // Hashes the password for storage
+        /// <summary>
+        /// Hashes the password for storage
+        /// </summary>
+        /// <param name="password">Password to be hashed</param>
+        /// <returns>Hashed password as string</returns>
         public static string HashPassword(string password)
         {
             using (var sha256 = SHA256.Create())
@@ -50,7 +62,11 @@ namespace CRUDService.Helpers
             }
         }
 
-        // Validates password according to common rules
+        /// <summary>
+        /// Validates password according to common rules
+        /// </summary>
+        /// <param name="password">Password to be validated</param>
+        /// <returns>bool saying whether password is valid or not</returns>
         public static bool ValidatePassword(string password)
         {
             // Check if password is empty, null, or comprised solely of whitespace chars
@@ -68,7 +84,12 @@ namespace CRUDService.Helpers
             return hasUpper && hasLower && hasDigit && hasSpecial;
         }
 
-        // Validates subcategory value
+        /// <summary>
+        /// Validates subcategory value
+        /// </summary>
+        /// <param name="subCategory">Name of a subcategory</param>
+        /// <param name="categories">List of subcategories names</param>
+        /// <returns></returns>
         public static bool ValidateSubCategory(
             string subCategory, 
             List<string> categories)

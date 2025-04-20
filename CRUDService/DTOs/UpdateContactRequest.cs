@@ -3,7 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CRUDService.DTOs
 {
-    // DTO class for use when recieving Contact update requests
+    /// <summary>
+    /// DTO class for use when recieving Contact update requests.
+    /// Annotated for early valdiation and early rejection of invalid requests.
+    /// </summary>
     public class UpdateContactRequest : DetailedContactDTO
     {
         [Required]

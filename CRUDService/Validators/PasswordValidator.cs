@@ -2,11 +2,18 @@
 
 namespace CRUDService.Validators
 {
-    // Custom password for use in password validation
+    /// <summary>
+    /// Custom password validator for use in automatic password validation through annotations
+    /// </summary>
     public class PasswordValidator : ValidationAttribute
     {
         public bool IsEdit { get; set; }
 
+        /// <summary>
+        /// Checks if given value is valid
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>true iof valid false otherwise</returns>
         public override bool IsValid(object value)
         {
             var password = value as string;

@@ -2,7 +2,9 @@
 
 namespace CRUDService.Models
 {
-    // Entity class for Dcitionary table Categories
+    /// <summary>
+    /// Entity class for Dcitionary table Categories
+    /// </summary>
     public class Category
     {
         public required int Id { get; set; }

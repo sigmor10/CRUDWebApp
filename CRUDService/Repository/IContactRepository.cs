@@ -3,42 +3,92 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CRUDService.Repository
 {
+    /// <summary>
+    /// Interface posseses collection of methods for handling data stored in the database
+    /// </summary>
     public interface IContactRepository
     {
-        // Checks if contact with given id exists
+        /// <summary>
+        /// Checks if contact with given id exists
+        /// </summary>
+        /// <param name="id">Contacts Guid</param>
+        /// <returns>true if exists false if not</returns>
         Task<bool> CheckIfIdExists(Guid id);
 
-        // Retrieves contact by its id
+        /// <summary>
+        /// Retrieves contact by its id
+        /// </summary>
+        /// <param name="id">Contacts Guid</param>
+        /// <returns>Either Contact object or null</returns>
         Task<Contact?> FindContactById(Guid id);
 
-        // Retrieves contact by its Email
+        /// <summary>
+        /// Retrieves contact by its Email
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns>true if given email exists or flase if not</returns>
         Task<bool> CheckIfEmailTaken(string email);
 
-        // Retrieves a paginated list of contacts
+        /// <summary>
+        /// Retrieves a paginated list of contacts
+        /// </summary>
+        /// <param name="skip">Defines how many records should be skipped</param>
+        /// <param name="take">Defines max length of returned list</param>
+        /// <returns>Either Contact object or null</returns>
         Task<List<Contact>> FindAllContacts(int skip, int take);
 
-        // Retrieves all categories
+        /// <summary>
+        /// Retrieves all categories
+        /// </summary>
+        /// <returns>Category object</returns>
         Task<List<Category>> FindAllCategories();
 
-        // Retrieves a category name for given id
+        /// <summary>
+        /// Retrieves a category name for given id
+        /// </summary>
+        /// <param name="id">Id of a Category</param>
+        /// <returns>Category's name</returns>
         Task<string?> FindCategoryNameById(int id);
 
-        // Retrieves user email by her/his id
+        /// <summary>
+        /// Retrieves user email by her/his id
+        /// </summary>
+        /// <param name="id">Contact's Guid</param>
+        /// <returns>Contact's email</returns>
         Task<string?> FindUserEmailById(Guid id);
 
-        // Fetches all subcategoires for given id
+        /// <summary>
+        /// Fetches all subcategoires for given id
+        /// </summary>
+        /// <param name="id">Id of a Category</param>
+        /// <returns>List of names of all the subcategory names belonging to the given Category</returns>
         Task<List<string>> FindAllSubCategoriesById(int id);
 
-        // Fetches all subcategoires
+        /// <summary>
+        /// Fetches all subcategoires
+        /// </summary>
+        /// <returns>List of all subcategories</returns>
         Task<List<SubCategory>> FindAllSubCategories();
 
-        // Adds new contact
+        /// <summary>
+        /// Adds new contact
+        /// </summary>
+        /// <param name="contact">Contact object</param>
+        /// <returns></returns>
         Task AddContact(Contact contact);
 
-        // Updates existing contact
+        /// <summary>
+        /// Updates existing contact
+        /// </summary>
+        /// <param name="contact">Contact object</param>
+        /// <returns>true if object was updated successfully false if not</returns>
         Task<bool> UpdateContact(Contact contact);
 
-        // Deletes existing contact
+        /// <summary>
+        /// Deletes existing contact
+        /// </summary>
+        /// <param name="id">Contact's Guid</param>
+        /// <returns>true if object was deleted successfully false if not</returns>
         Task<bool> DeleteContact(Guid id);
     }
 }

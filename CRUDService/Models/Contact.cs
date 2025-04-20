@@ -4,8 +4,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CRUDService.Models
 {
-    // Entity class for CRUD entity Contact
-    // For database table constraint details see Contracts/ContactConfiguration.cs file
+    /// <summary>
+    /// Entity class for CRUD entity Contact
+    /// For database table constraint details see Contracts/ContactConfiguration.cs file
+    /// </summary>
     public class Contact
     {
         public Guid Id { get; set; } = Guid.NewGuid();
